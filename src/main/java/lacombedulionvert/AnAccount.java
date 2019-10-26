@@ -18,4 +18,8 @@ public class AnAccount {
     public int getAmount() {
         return amount;
     }
+
+    public void deposit(int amount) {
+        this.amount += amount;
+    }
 }
