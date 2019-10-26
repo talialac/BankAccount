@@ -10,9 +10,8 @@ import org.junit.Test;
  */
 public class AnAccountTest
 {
-
     @Test
-    public void creation_of_a_bank_account() {
+    public void opening_a_default_bank_account() {
         AnAccount account = new AnAccount();
         assertEquals(50, account.amount);
     }
