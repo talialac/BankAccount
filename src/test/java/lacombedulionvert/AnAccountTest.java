@@ -48,4 +48,13 @@ public class AnAccountTest
         assertEquals(expected, account.getAmount());
     }
 
+    @Test
+    public void withdrawal_money() {
+        Money amount_20 = new Money(20);
+        Money amount_50 = new Money(50);
+        AnAccount account = new AnAccount(amount_50);//there is 100 in it
+        account.withdrawal(amount_20);
+        int expected = 80;
+        assertEquals(expected, account.getAmount());
+    }
 }

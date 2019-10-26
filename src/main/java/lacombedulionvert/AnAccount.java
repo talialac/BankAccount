@@ -25,4 +25,9 @@ public class AnAccount {
         int addition = this.amount.getValue() + amount.getValue();
         this.amount.setValue(addition);
     }
+
+    public void withdrawal(Money amount) {
+        int substraction = this.amount.getValue() - amount.getValue();
+        this.amount.setValue(substraction);
+    }
 }
