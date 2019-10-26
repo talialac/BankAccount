@@ -1,5 +1,6 @@
 package lacombedulionvert;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -19,6 +20,12 @@ public class AnAccountTest
     public void opening_a_bank_account_and_directly_put_money_in_it() {
         AnAccount account = new AnAccount(100);
         assertEquals(150, account.getAmount());
+    }
+
+    @Test
+    public void opening_a_bank_account_and_directly_put_money_in_it_with_a_negative_number() {
+        AnAccount account = new AnAccount(-100);
+        assertEquals(0, account.getAmount());
     }
 
     @Test
