@@ -5,7 +5,7 @@ package lacombedulionvert;
  *
  */
 public class AnAccount {
-    public int amount;
+    private int amount;
 
     public AnAccount() {
         this.amount = 50;
@@ -13,5 +13,9 @@ public class AnAccount {
 
     public AnAccount(int first_amount) {
         this.amount = first_amount + 50;
+    }
+
+    public int getAmount() {
+        return amount;
     }
 }
