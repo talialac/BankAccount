@@ -5,24 +5,24 @@ package lacombedulionvert;
  *
  */
 public class AnAccount {
-    private int amount;
+    private Money amount;
     private final int welcome_gift_amount = 50;
 
 
     public AnAccount() {
-        this.amount = welcome_gift_amount;
+        this.amount = new Money(welcome_gift_amount);
     }
 
-    public AnAccount(int first_amount) {
-        if (first_amount>0)
-            this.amount = first_amount + welcome_gift_amount;
+    public AnAccount(Money first_amount) {
+        this.amount = new Money(first_amount.getValue() + welcome_gift_amount);
     }
 
     public int getAmount() {
-        return amount;
+        return this.amount.getValue();
     }
 
-    public void deposit(int amount) {
-        this.amount += amount;
+    public void deposit(Money amount) {
+        int addition = this.amount.getValue() + amount.getValue();
+        this.amount.setValue(addition);
     }
 }

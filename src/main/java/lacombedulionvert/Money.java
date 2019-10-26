@@ -8,10 +8,10 @@ public class Money {
     }
 
     public int getValue() {
-        return value;
+        return this.value;
     }
 
     public void setValue(int value) {
-        value = Math.abs(value);
+        this.value = Math.abs(value);
     }
 }

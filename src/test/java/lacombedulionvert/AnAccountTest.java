@@ -17,28 +17,33 @@ public class AnAccountTest
 
     @Test
     public void opening_a_bank_account_and_directly_put_money_in_it() {
-        AnAccount account = new AnAccount(100);
+        Money amount_100 = new Money(100);
+        AnAccount account = new AnAccount(amount_100);
         assertEquals(150, account.getAmount());
     }
 
     @Test
     public void opening_a_bank_account_and_directly_put_money_in_it_with_a_negative_number() {
-        AnAccount account = new AnAccount(-100);
-        assertEquals(0, account.getAmount());
+        Money amount_100 = new Money(-100);
+        AnAccount account = new AnAccount(amount_100);
+        assertEquals(150, account.getAmount());
     }
 
     @Test
     public void deposit_money_in_a_default_account_already_opened() {
         AnAccount account = new AnAccount();
-        account.deposit(50);
+        Money amount_50 = new Money(50);
+        account.deposit(amount_50);
         int expected = 100;
         assertEquals(expected, account.getAmount());
     }
 
     @Test
     public void deposit_money_in_an_account_already_opened() {
-        AnAccount account = new AnAccount(100);
-        account.deposit(50);
+        Money amount_100 = new Money(100);
+        Money amount_50 = new Money(50);
+        AnAccount account = new AnAccount(amount_100);
+        account.deposit(amount_50);
         int expected = 200;
         assertEquals(expected, account.getAmount());
     }
