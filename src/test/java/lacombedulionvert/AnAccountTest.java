@@ -28,4 +28,12 @@ public class AnAccountTest
         int expected = 100;
         assertEquals(expected, account.getAmount());
     }
+
+    @Test
+    public void deposit_money_in_an_account_already_opened2() {
+        AnAccount account = new AnAccount(100);
+        account.deposit(50);
+        int expected = 200;
+        assertEquals(expected, account.getAmount());
+    }
 }
