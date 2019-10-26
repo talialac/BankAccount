@@ -52,9 +52,19 @@ public class AnAccountTest
     public void withdrawal_money() {
         Money amount_20 = new Money(20);
         Money amount_50 = new Money(50);
-        AnAccount account = new AnAccount(amount_50);//there is 100 in it
-        account.withdrawal(amount_20);
+        AnAccount account_with_100_in_it = new AnAccount(amount_50);
+        account_with_100_in_it.withdrawal(amount_20);
         int expected = 80;
-        assertEquals(expected, account.getAmount());
+        assertEquals(expected, account_with_100_in_it.getAmount());
+    }
+
+    @Test
+    public void client_can_not_withdrawal_more_than_the_amount_in_the_account() {
+        Money money_150 = new Money(150);
+        Money amount_50 = new Money(50);
+        AnAccount account_with_100_in_it = new AnAccount(amount_50);
+        account_with_100_in_it.withdrawal(money_150);
+        int expected = 0;
+        assertEquals(expected, account_with_100_in_it.getAmount());
     }
 }

@@ -28,6 +28,11 @@ public class AnAccount {
 
     public void withdrawal(Money amount) {
         int substraction = this.amount.getValue() - amount.getValue();
-        this.amount.setValue(substraction);
+        if (substraction > 0) {
+            this.amount.setValue(substraction);
+        }
+        else{
+            this.amount.setValue(0);
+        }
     }
 }
