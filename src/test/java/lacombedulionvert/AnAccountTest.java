@@ -22,7 +22,7 @@ public class AnAccountTest
     }
 
     @Test
-    public void deposit_money_in_an_account_already_opened() {
+    public void deposit_money_in_a_default_account_already_opened() {
         AnAccount account = new AnAccount();
         account.deposit(50);
         int expected = 100;
@@ -30,7 +30,7 @@ public class AnAccountTest
     }
 
     @Test
-    public void deposit_money_in_an_account_already_opened2() {
+    public void deposit_money_in_an_account_already_opened() {
         AnAccount account = new AnAccount(100);
         account.deposit(50);
         int expected = 200;
