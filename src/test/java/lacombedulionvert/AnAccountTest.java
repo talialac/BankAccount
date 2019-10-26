@@ -43,4 +43,5 @@ public class AnAccountTest
         int expected = 200;
         assertEquals(expected, account.getAmount());
     }
+
 }
