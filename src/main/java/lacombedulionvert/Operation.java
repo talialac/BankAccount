@@ -12,7 +12,7 @@ public class Operation {
         this.date_time = LocalDateTime.now();
     }
 
-    Operation(Money money_50, LocalDateTime date_time) {
+    public Operation(Money money_50, LocalDateTime date_time) {
         this.amount = money_50;
         this.date_time = date_time;
     }

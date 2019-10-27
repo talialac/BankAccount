@@ -11,7 +11,7 @@ public class DepositTest {
         Money m50 = new Money(50);
 
         Deposit deposit = new Deposit(m20);
-        deposit.calculateBalance(m50);
+        deposit.calculBalance(m50);
         int result = deposit.getBalanceValue();
         assertEquals(70, result);
     }
