@@ -14,15 +14,13 @@ public class OperationHelper {
         return new Operation(money_50, check_date);
     }
 
-    private static LocalDateTime createDateFromFormat(String dateFormat) {
+    private static LocalDateTime createDateFromFormat(String date_format) {
         LocalDateTime check_date;
         try {
-            check_date = LocalDateTime.parse(dateFormat, DATE_TIME_FORMATTER);
+            check_date = LocalDateTime.parse(date_format, DATE_TIME_FORMATTER);
         } catch (DateTimeParseException e) {
             check_date = null;
         }
         return check_date;
     }
-
-
 }

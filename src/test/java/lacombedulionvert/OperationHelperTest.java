@@ -12,7 +12,8 @@ public class OperationHelperTest {
         Operation expectedOperation = new Operation(money_50,
                 LocalDateTime.of(2019, 4, 21, 14, 54));
 
-        Operation resultOperation = OperationHelper.create(money_50, "2019-04-21 14h54");
+        Operation resultOperation = OperationHelper.create(money_50,
+                "2019-04-21 14h54");
 
         Assert.assertEquals(expectedOperation, resultOperation);
     }

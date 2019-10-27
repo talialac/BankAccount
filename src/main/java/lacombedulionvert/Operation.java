@@ -7,8 +7,9 @@ public class Operation {
     private Money amount;
     LocalDateTime date_time;
 
-    Operation(Money amount) {
+    public Operation(Money amount) {
         this.amount = amount;
+        this.date_time = LocalDateTime.now();
     }
 
     public Operation(Money money_50, LocalDateTime date_time) {
@@ -20,6 +21,11 @@ public class Operation {
         return amount.getValue();
     }
 
+    /*public String getDateValue() {
+        return this.date_time.getYear() + "-"+ this.date_time.getMonthValue() + "-" + this.date_time.getDayOfMonth()
+                + " " + this.date_time.getHour() + "h" + this.date_time.getMinute();;
+    }*/
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -27,5 +33,9 @@ public class Operation {
         Operation that = (Operation) o;
         return Objects.equals(amount, that.amount) &&
                 Objects.equals(date_time, that.date_time);
+    }
+
+    public LocalDateTime getDate() {
+        return date_time;
     }
 }
