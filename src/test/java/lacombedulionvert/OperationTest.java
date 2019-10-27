@@ -44,4 +44,16 @@ public class OperationTest {
         Money expected = new Money(20);
         assertEquals(expected, result);
     }
+
+    @Test
+    public void a_deposit_operation_get_balance() {
+        Money money_60 = new Money(60);
+        Money money_30 = new Money(30);
+        Operation deposit = new Operation(money_30);
+
+        Money result = deposit.calculateBalance(money_60);
+
+        Money expected = new Money(90);
+        assertEquals(expected, result);
+    }
 }

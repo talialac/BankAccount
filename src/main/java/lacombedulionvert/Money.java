@@ -3,17 +3,17 @@ package lacombedulionvert;
 import java.util.Objects;
 
 public class Money {
-    public int value;
+    private int value;
 
-    public Money(int value) {
+    Money(int value) {
             this.value = Math.abs(value);
     }
 
-    public int getValue() {
+    int getValue() {
         return this.value;
     }
 
-    public void setValue(int value) {
+    void setValue(int value) {
         this.value = Math.abs(value);
     }
 
@@ -23,5 +23,10 @@ public class Money {
         if (o == null || getClass() != o.getClass()) return false;
         Money that = (Money) o;
         return Objects.equals(value, that.value) ;
+    }
+
+    @Override
+    public String toString() {
+        return "Money value is " + value + ".";
     }
 }
