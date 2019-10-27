@@ -29,6 +29,19 @@ public class OperationTest {
         LocalDateTime now = LocalDateTime.now();
         Operation withdrawal = new Operation(money_50);
         int amount_of_deposit = withdrawal.getAmount();
+        System.out.println(withdrawal.getDateValue());
         assertEquals(now, withdrawal.getDate());
+    }
+
+    @Test
+    public void a_withdrawal_operation_get_balance() {
+        Money money_50 = new Money(50);
+        Money money_30 = new Money(30);
+        Operation withdrawal = new Operation(money_30);
+
+        Money result = withdrawal.calculateBalance(money_50);
+
+        Money expected = new Money(20);
+        assertEquals(expected, result);
     }
 }

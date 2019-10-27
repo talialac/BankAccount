@@ -21,10 +21,10 @@ public class Operation {
         return amount.getValue();
     }
 
-    /*public String getDateValue() {
+    public String getDateValue() {
         return this.date_time.getYear() + "-"+ this.date_time.getMonthValue() + "-" + this.date_time.getDayOfMonth()
-                + " " + this.date_time.getHour() + "h" + this.date_time.getMinute();;
-    }*/
+                + " " + this.date_time.getHour() + "h" + this.date_time.getMinute();
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -37,5 +37,15 @@ public class Operation {
 
     public LocalDateTime getDate() {
         return date_time;
+    }
+
+    public Money calculateBalance(Money amount_in_account) {
+        int substraction = amount_in_account.getValue() - this.amount.getValue();
+        if (substraction > 0) {
+            return new Money(substraction);
+        }
+        else{
+            return new Money(0);
+        }
     }
 }
