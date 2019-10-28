@@ -33,18 +33,14 @@ public class AnAccount {
     }
 
     public void withdrawal(Money amount) {
-        int substraction = this.amount.getValue() - amount.getValue();
-        if (substraction > 0) {
-            this.amount.setValue(substraction);
-        }
-        else{
-            this.amount.setValue(0);
-        }
+        Withdrawal withdrawal = new Withdrawal(amount);
+        withdrawal.calculBalance(this.amount);
+        this.amount.setValue(withdrawal.getBalanceValue());
+        historic.add(withdrawal);
     }
 
     public void getHistoric() {
-        Deposit deposit = new Deposit(new Money (0));
-        deposit = (Deposit) historic.get(historic.size()-1);
-        deposit.printOperation();
+        OperationAbstract op = historic.get(historic.size()-1);
+        op.printOperation();
     }
 }

@@ -79,4 +79,14 @@ public class AnAccountTest
         LocalDateTime now = LocalDateTime.now();
         account.getHistoric();
     }
+
+    @Test
+    public void print_historic_of_last_withdrawal() {
+        Money amount_100 = new Money(100);
+        Money amount_50 = new Money(50);
+        AnAccount account = new AnAccount(amount_100);
+        account.withdrawal(amount_50);
+        LocalDateTime now = LocalDateTime.now();
+        account.getHistoric();
+    }
 }
