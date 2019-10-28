@@ -26,8 +26,10 @@ public class AnAccount {
     }
 
     public void deposit(Money amount) {
-        int addition = this.amount.getValue() + amount.getValue();
-        this.amount.setValue(addition);
+        Deposit deposit = new Deposit(amount);
+        deposit.calculBalance(this.amount);
+        this.amount.setValue(deposit.getBalanceValue());
+        historic.add(deposit);
     }
 
     public void withdrawal(Money amount) {
@@ -41,6 +43,8 @@ public class AnAccount {
     }
 
     public void getHistoric() {
-
+        Deposit deposit = new Deposit(new Money (0));
+        deposit = (Deposit) historic.get(historic.size()-1);
+        deposit.printOperation();
     }
 }
