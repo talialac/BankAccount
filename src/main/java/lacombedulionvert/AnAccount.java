@@ -2,23 +2,23 @@ package lacombedulionvert;
 
 import java.util.ArrayList;
 
-/**
- * Hello world!
- *
- */
 class AnAccount {
     private Money amount;
     private final int welcome_gift_amount = 50;
     private ArrayList<OperationAbstract> historic;
 
     AnAccount() {
+        this.historic = new ArrayList<>();
         this.amount = new Money(welcome_gift_amount);
-        historic = new ArrayList<>();
+        Deposit deposit = new Deposit(this.amount);
+        historic.add(deposit);
     }
 
     AnAccount(Money first_amount) {
-        this.amount = new Money(first_amount.getValue() + welcome_gift_amount);
-        historic = new ArrayList<>();
+        this.historic = new ArrayList<>();
+        this.amount = new Money(first_amount.add(welcome_gift_amount));
+        Deposit deposit = new Deposit(this.amount);
+        historic.add(deposit);
     }
 
     int getAmount() {
@@ -39,8 +39,7 @@ class AnAccount {
         historic.add(withdrawal);
     }
 
-    void getHistoric() {
-        OperationAbstract op;
+    void printHistoric() {
         for (OperationAbstract elt: historic) {
             elt.printOperation();
         }

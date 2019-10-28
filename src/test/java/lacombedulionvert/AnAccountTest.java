@@ -2,8 +2,6 @@ package lacombedulionvert;
 
 import org.junit.Test;
 
-import java.time.LocalDateTime;
-
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -76,7 +74,7 @@ public class AnAccountTest
         Money amount_50 = new Money(50);
         AnAccount account = new AnAccount(amount_100);
         account.deposit(amount_50);
-        account.getHistoric();
+        account.printHistoric();
     }
 
     @Test
@@ -85,7 +83,7 @@ public class AnAccountTest
         Money amount_50 = new Money(50);
         AnAccount account = new AnAccount(amount_100);
         account.withdrawal(amount_50);
-        account.getHistoric();
+        account.printHistoric();
     }
 
     @Test
@@ -99,6 +97,23 @@ public class AnAccountTest
         account_1050.deposit(amount_20);
         account_1050.withdrawal(amount_1000);
 
-        account_1050.getHistoric();
+        account_1050.printHistoric();
+    }
+
+    @Test
+    public void print_historic_of_operations_when_last_withdrawal_is_bigger_than_amount_account() {
+        Money amount_1000 = new Money(1000);
+        Money amount_1 = new Money(1);
+        Money amount_19 = new Money(19);
+        Money amount_20 = new Money(20);
+        Money amount_50 = new Money(50);
+        AnAccount account_1050 = new AnAccount(amount_1000);
+
+        account_1050.withdrawal(amount_50);
+        account_1050.deposit(amount_20);
+        account_1050.withdrawal(amount_1000);
+        account_1050.withdrawal(amount_50);
+
+        account_1050.printHistoric();
     }
 }

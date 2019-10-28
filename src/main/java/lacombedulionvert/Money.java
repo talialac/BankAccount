@@ -6,7 +6,7 @@ public class Money {
     private int value;
 
     Money(int value) {
-            this.value = Math.abs(value);
+        this.value = Math.abs(value);
     }
 
     int getValue() {
@@ -17,12 +17,16 @@ public class Money {
         this.value = Math.abs(value);
     }
 
+    public int add(int toAdd) {
+        return this.value + toAdd;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Money that = (Money) o;
-        return Objects.equals(value, that.value) ;
+        return Objects.equals(value, that.value);
     }
 
     @Override

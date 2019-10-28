@@ -4,9 +4,9 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 public abstract class OperationAbstract {
-    private Money amount;
-    private LocalDateTime date_time;
-    private Money balance;
+    Money amount;
+    LocalDateTime date_time;
+    Money balance;
 
     OperationAbstract(Money amount) {
         this.amount = amount;
@@ -54,4 +54,8 @@ public abstract class OperationAbstract {
     void printOperation(){
         System.out.println(infosOperation());
     }
+
+    public void setBalance(Money new_balance){
+        this.balance = new_balance;
+    };
 }
