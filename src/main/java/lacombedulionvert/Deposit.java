@@ -7,8 +7,7 @@ public class Deposit extends OperationAbstract{
     }
 
     public void calculBalance(Money amount_in_account) {
-        int addition = amount_in_account.getValue() + super.getAmount();
-        super.getBalance().setValue(addition);
+        super.setBalance(new Money(amount_in_account.add(super.getAmount())));
     }
 
     public String infosOperation(){
