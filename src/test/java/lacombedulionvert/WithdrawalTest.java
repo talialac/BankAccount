@@ -24,7 +24,7 @@ public class WithdrawalTest {
         Withdrawal withdrawal = new Withdrawal(m60);
         withdrawal.calculBalance(m50);
         int result = withdrawal.getBalanceValue();
-        System.out.println(withdrawal.infosOperation());
+        withdrawal.printOperation();
         assertEquals(0, result);
     }
 }

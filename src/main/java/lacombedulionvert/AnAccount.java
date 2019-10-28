@@ -1,5 +1,7 @@
 package lacombedulionvert;
 
+import java.util.ArrayList;
+
 /**
  * Hello world!
  *
@@ -7,14 +9,16 @@ package lacombedulionvert;
 public class AnAccount {
     private Money amount;
     private final int welcome_gift_amount = 50;
-
+    ArrayList<OperationAbstract> historic;
 
     public AnAccount() {
         this.amount = new Money(welcome_gift_amount);
+        historic = new ArrayList<>();
     }
 
     public AnAccount(Money first_amount) {
         this.amount = new Money(first_amount.getValue() + welcome_gift_amount);
+        historic = new ArrayList<>();
     }
 
     public int getAmount() {
@@ -34,5 +38,9 @@ public class AnAccount {
         else{
             this.amount.setValue(0);
         }
+    }
+
+    public void getHistoric() {
+
     }
 }

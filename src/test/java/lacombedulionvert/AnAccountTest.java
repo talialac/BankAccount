@@ -2,6 +2,8 @@ package lacombedulionvert;
 
 import org.junit.Test;
 
+import java.time.LocalDateTime;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -66,5 +68,15 @@ public class AnAccountTest
         account_with_100_in_it.withdrawal(money_150);
         int expected = 0;
         assertEquals(expected, account_with_100_in_it.getAmount());
+    }
+
+    @Test
+    public void print_historic_of_last_deposit() {
+        Money amount_100 = new Money(100);
+        Money amount_50 = new Money(50);
+        AnAccount account = new AnAccount(amount_100);
+        account.deposit(amount_50);
+        LocalDateTime now = LocalDateTime.now();
+        account.getHistoric();
     }
 }

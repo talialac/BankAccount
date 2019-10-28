@@ -47,4 +47,7 @@ public abstract class OperationAbstract {
         return balance.getValue();
     }
 
+    public void printOperation(){
+        System.out.println(infosOperation());
+    }
 }
