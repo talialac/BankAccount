@@ -14,6 +14,10 @@ public abstract class OperationAbstract {
         balance = new Money(0);
     }
 
+    public void setAmount(Money amount) {
+        this.amount = amount;
+    }
+
     int getAmount() {
         return amount.getValue();
     }
@@ -47,7 +51,7 @@ public abstract class OperationAbstract {
         return balance.getValue();
     }
 
-    public void printOperation(){
+    void printOperation(){
         System.out.println(infosOperation());
     }
 }

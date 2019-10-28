@@ -76,7 +76,6 @@ public class AnAccountTest
         Money amount_50 = new Money(50);
         AnAccount account = new AnAccount(amount_100);
         account.deposit(amount_50);
-        LocalDateTime now = LocalDateTime.now();
         account.getHistoric();
     }
 
@@ -86,7 +85,20 @@ public class AnAccountTest
         Money amount_50 = new Money(50);
         AnAccount account = new AnAccount(amount_100);
         account.withdrawal(amount_50);
-        LocalDateTime now = LocalDateTime.now();
         account.getHistoric();
+    }
+
+    @Test
+    public void print_historic_of_operations() {
+        Money amount_1000 = new Money(1000);
+        Money amount_20 = new Money(20);
+        Money amount_50 = new Money(50);
+        AnAccount account_1050 = new AnAccount(amount_1000);
+
+        account_1050.withdrawal(amount_50);
+        account_1050.deposit(amount_20);
+        account_1050.withdrawal(amount_1000);
+
+        account_1050.getHistoric();
     }
 }
