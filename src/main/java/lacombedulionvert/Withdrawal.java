@@ -14,4 +14,8 @@ public class Withdrawal extends OperationAbstract{
             super.getBalance().setValue(0);
         }
     }
+
+    public String infosOperation(){
+        return "Withdrawal of " + super.getAmount() + " on " + super.getDateValue() + ". Balance: " + super.getBalanceValue() + ".";
+    }
 }

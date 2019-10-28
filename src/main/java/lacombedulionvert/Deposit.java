@@ -10,4 +10,8 @@ public class Deposit extends OperationAbstract{
         int addition = amount_in_account.getValue() + super.getAmount();
         super.getBalance().setValue(addition);
     }
+
+    public String infosOperation(){
+        return "Deposit of " + super.getAmount() + " on " + super.getDateValue() + ". Balance: " + super.getBalanceValue() + ".";
+    }
 }

@@ -13,6 +13,7 @@ public class DepositTest {
         Deposit deposit = new Deposit(m20);
         deposit.calculBalance(m50);
         int result = deposit.getBalanceValue();
+        System.out.println(deposit.infosOperation());
         assertEquals(70, result);
     }
 }

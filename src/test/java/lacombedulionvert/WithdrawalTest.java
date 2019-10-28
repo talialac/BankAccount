@@ -16,6 +16,7 @@ public class WithdrawalTest {
         assertEquals(30, result);
     }
 
+    @Test
     public void a_withdrawal_amount_cant_be_bigger_than_amount_in_account() {
         Money m60 = new Money(60);
         Money m50 = new Money(50);
@@ -23,6 +24,7 @@ public class WithdrawalTest {
         Withdrawal withdrawal = new Withdrawal(m60);
         withdrawal.calculBalance(m50);
         int result = withdrawal.getBalanceValue();
+        System.out.println(withdrawal.infosOperation());
         assertEquals(0, result);
     }
 }
