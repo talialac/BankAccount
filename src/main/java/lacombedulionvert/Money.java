@@ -21,6 +21,10 @@ public class Money {
         return this.value + toAdd;
     }
 
+    public void addVoid(int toAdd) {
+        this.value += toAdd;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -32,5 +36,9 @@ public class Money {
     @Override
     public String toString() {
         return "Money value is " + value + ".";
+    }
+
+    public void valueOf(Money amount) {
+        new Money(amount.getValue());
     }
 }

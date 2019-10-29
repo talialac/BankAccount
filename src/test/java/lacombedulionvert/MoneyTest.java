@@ -30,4 +30,11 @@ public class MoneyTest {
         money.setValue(-80);
         assertEquals(80, money.getValue());
     }
+
+    @Test
+    public void test_add_method_between_Money_and_int() {
+        Money money = new Money(50);
+        money.addVoid(10);
+        assertEquals(60, money.getValue());
+    }
 }
