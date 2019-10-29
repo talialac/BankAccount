@@ -11,11 +11,7 @@ public class Withdrawal extends OperationAbstract{
             super.setBalance(new Money(substraction));
         }
         else{
-            System.out.println("1) Dans le compte, il y a: "+ amount_in_account.getValue() +
-                    "\nLe montant du retrait est: " +super.getAmount());
-            super.setAmount(amount_in_account);
-            System.out.println("2) Dans le compte, il y a: "+ amount_in_account.getValue() +
-                    "\nLe montant du retrait est: " +super.getAmount());
+            super.amount.setValue(amount_in_account.getValue());
             super.setBalance(new Money(0));
         }
     }
