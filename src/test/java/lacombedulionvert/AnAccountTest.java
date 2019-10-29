@@ -16,9 +16,17 @@ public class AnAccountTest
     }
 
     @Test
+    public void opening_a_default_bank_account_print_deposit() {
+        AnAccount account = new AnAccount();
+        account.printHistoric();
+        assertEquals(50, account.getAmount());
+    }
+
+    @Test
     public void opening_a_bank_account_and_directly_put_money_in_it() {
         Money amount_100 = new Money(100);
         AnAccount account = new AnAccount(amount_100);
+        account.printHistoric();
         assertEquals(150, account.getAmount());
     }
 

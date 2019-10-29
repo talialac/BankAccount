@@ -11,6 +11,7 @@ class AnAccount {
         this.historic = new ArrayList<>();
         this.amount = new Money(welcome_gift_amount);
         Deposit deposit = new Deposit(this.amount);
+        deposit.setBalance(this.amount);
         historic.add(deposit);
     }
 
@@ -18,6 +19,7 @@ class AnAccount {
         this.historic = new ArrayList<>();
         this.amount = new Money(first_amount.add(welcome_gift_amount));
         Deposit deposit = new Deposit(this.amount);
+        deposit.setBalance(this.amount);
         historic.add(deposit);
     }
 

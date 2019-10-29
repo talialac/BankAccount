@@ -36,16 +36,8 @@ public abstract class OperationAbstract {
                 Objects.equals(date_time, that.date_time);
     }
 
-    LocalDateTime getDate() {
-        return date_time;
-    }
-
     public abstract void calculBalance(Money amount_in_account);
     public abstract String infosOperation();
-
-    Money getBalance() {
-        return balance;
-    }
 
     int getBalanceValue() {
         return balance.getValue();
